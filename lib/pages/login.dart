@@ -28,7 +28,7 @@ class Login extends StatelessWidget {
               ),
               padding: EdgeInsets.all(40.0),
               height: 0.4 * size.height,
-              width: 0.4 * size.width,
+              width: 0.3 * size.width,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
