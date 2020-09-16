@@ -26,7 +26,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
           Spacer(),
-          appBarButton,
+          appBarButton != null ? appBarButton : Container()
         ],
       ),
     );
