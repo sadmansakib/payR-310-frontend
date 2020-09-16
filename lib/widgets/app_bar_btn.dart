@@ -8,18 +8,15 @@ class AppBarButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(25),
-      child: FlatButton(
-        color: Colors.red,
-        padding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 25.0),
-        onPressed: btnFunction,
-        child: Text(
-          btnText.toUpperCase(),
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 14.5,
-          ),
+    return FlatButton(
+      color: Colors.red,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+      onPressed: btnFunction,
+      child: Text(
+        btnText.toUpperCase(),
+        style: TextStyle(
+          fontSize: 14.5,
         ),
       ),
     );

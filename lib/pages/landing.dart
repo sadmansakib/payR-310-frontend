@@ -23,7 +23,10 @@ class Landing extends StatelessWidget {
         child: Column(
           children: [
             Spacer(),
-            Body(),
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Body(),
+            ),
             Spacer(
               flex: 1,
             ),
