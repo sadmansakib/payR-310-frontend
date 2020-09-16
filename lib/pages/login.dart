@@ -11,7 +11,9 @@ class Login extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         appBarButton: AppBarButton(
-          btnFunction: () {},
+          btnFunction: () {
+            Navigator.pushNamed(context, '/signup');
+          },
           btnText: 'Sign up',
         ),
       ),

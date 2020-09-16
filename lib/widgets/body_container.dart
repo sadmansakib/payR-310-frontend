@@ -8,7 +8,7 @@ class BodyContainer extends StatelessWidget {
   BodyContainer({
     @required this.height,
     @required this.width,
-    @required this.child,
+    this.child,
   });
 
   @override

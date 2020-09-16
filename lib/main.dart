@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './pages/signup.dart';
 import './pages/landing.dart';
 import './pages/login.dart';
 
@@ -16,6 +17,7 @@ class PayR extends StatelessWidget {
       routes: {
         '/': (context) => Landing(),
         '/login': (context) => Login(),
+        '/signup': (context) => Signup()
       },
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
