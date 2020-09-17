@@ -18,8 +18,41 @@ class BillHistory extends StatelessWidget {
         color: Colors.white,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           DashBoardTitle(text: 'Payment History'),
+          SizedBox(
+            height: 40,
+          ),
+          DataTable(columns: const <DataColumn>[
+            DataColumn(
+              label: Text(
+                'Bill Date',
+                style: TextStyle(
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                'Bill Amount',
+                style: TextStyle(
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                'PaymentMethod',
+                style: TextStyle(
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ], rows: [])
         ],
       ),
     );
