@@ -8,14 +8,14 @@ class ProfileInfo extends StatelessWidget {
       children: [
         Text(
           'Sadman Sakib',
-          style: TextStyle(fontSize: 20.0),
+          style: TextStyle(fontSize: 16.0),
         ),
         SizedBox(
           height: 10,
         ),
         Text(
           '1234567891',
-          style: TextStyle(fontSize: 20.0),
+          style: TextStyle(fontSize: 16.0),
         )
       ],
     );

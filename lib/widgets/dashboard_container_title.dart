@@ -14,7 +14,7 @@ class DashBoardTitle extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35.0),
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
       ),
     );
   }

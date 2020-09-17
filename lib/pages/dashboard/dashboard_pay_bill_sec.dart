@@ -43,7 +43,7 @@ class BillPaySection extends StatelessWidget {
               'Pay Bill'.toUpperCase(),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20.0,
+                fontSize: 14.0,
                 color: Colors.white,
               ),
             ),

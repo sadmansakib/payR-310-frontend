@@ -29,7 +29,7 @@ class BillHistory extends StatelessWidget {
               label: Text(
                 'Bill Date',
                 style: TextStyle(
-                  fontSize: 17.0,
+                  fontSize: 14.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -38,7 +38,7 @@ class BillHistory extends StatelessWidget {
               label: Text(
                 'Bill Amount',
                 style: TextStyle(
-                  fontSize: 17.0,
+                  fontSize: 14.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -47,7 +47,7 @@ class BillHistory extends StatelessWidget {
               label: Text(
                 'PaymentMethod',
                 style: TextStyle(
-                  fontSize: 17.0,
+                  fontSize: 14.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
