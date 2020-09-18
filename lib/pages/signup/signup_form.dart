@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:payR/api/apihandler.dart';
-import 'package:payR/models/signup_model.dart';
+import '../../api/apihandler.dart';
+import '../../models/signup_model.dart';
 import './signup_text_field.dart';
 
 class SignUpForm extends StatelessWidget {

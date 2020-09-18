@@ -1,10 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../models/customer_token.dart';
+import '../models/customer_login.dart';
+import '../api/apihandler.dart';
 import '../widgets/custom_appbar.dart';
 import '../widgets/body_container.dart';
 import '../widgets/app_bar_btn.dart';
 
 class Login extends StatelessWidget {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  _login(BuildContext context) async {
+    CustomerLogin customerLogin = CustomerLogin(
+      email: emailController.text,
+      password: passwordController.text,
+    );
+
+    CustomerToken customerToken = await APIHandler.login(customerLogin);
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    if (customerToken.token != null) {
+      await prefs.setString('token', customerToken.token);
+      Navigator.pushNamed(context, '/dashboard');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -35,7 +58,8 @@ class Login extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   TextFormField(
-                    style: TextStyle(fontSize: 22.0),
+                    controller: emailController,
+                    style: TextStyle(fontSize: 18.0),
                     decoration: InputDecoration(
                       labelText: 'Email',
                       labelStyle: TextStyle(fontSize: 15.0),
@@ -44,7 +68,8 @@ class Login extends StatelessWidget {
                   ),
                   SizedBox(),
                   TextFormField(
-                    style: TextStyle(fontSize: 22.0),
+                    controller: passwordController,
+                    style: TextStyle(fontSize: 18.0),
                     obscureText: true,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
@@ -67,7 +92,7 @@ class Login extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/dashboard');
+                      _login(context);
                     },
                   ),
                 ],
