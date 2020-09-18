@@ -25,7 +25,7 @@ class SignUpForm extends StatelessWidget {
           email: emailController.text,
           mobile: mobileController.text,
           password: passController.text);
-      print(signUpModel);
+      print(signUpModel.toString());
       int success = await APIHandler.signUp(signUpModel);
       if (success == 201) {
         Navigator.pushNamed(context, '/login');
