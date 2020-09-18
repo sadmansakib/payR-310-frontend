@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payR/pages/dashboard/dashboard.dart';
-import './pages/signup.dart';
+import './pages/signup/signup.dart';
 import './pages/landing.dart';
 import './pages/login.dart';
 
