@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:http/http.dart';
 import 'package:payR/models/customer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -31,16 +33,14 @@ class APIHandler {
     String token = prefs.getString('token');
     Response response = await get(
       Uri.encodeFull("http://localhost:8080/customers/customer"),
-      headers: {
-        "token": token,
-        "Content-Type": "application/json",
-      },
+      headers: {"token": token, "Content-Type": "application/json"},
     );
 
     if (response.statusCode == 200) {
-      var jsonResponse = jsonDecode(response.body);
+      var jsonResponse = jsonDecode(response.body)['customer'];
+      log(jsonResponse.toString());
       return Customer.fromJson(
-        jsonDecode(jsonResponse),
+        jsonResponse,
       );
     } else {
       throw Exception('Failed to load customer info');

@@ -14,43 +14,44 @@ class _ProfileInfoState extends State<ProfileInfo> {
 
   @override
   void initState() {
-    customer = APIHandler.getCustomerInfo();
     super.initState();
+    customer = APIHandler.getCustomerInfo();
   }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: customer,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Column(
             children: [
               Text(
                 "${snapshot.data.firstName} ${snapshot.data.lastName}",
-                style: TextStyle(fontSize: 16.0),
+                style: TextStyle(fontSize: 14.0),
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
-                '${snapshot.data.email}',
+                "${snapshot.data.email}",
+                style: TextStyle(fontSize: 14.0),
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
-                '${snapshot.data.mobile}',
-              )
+                "${snapshot.data.mobile}",
+                style: TextStyle(fontSize: 14.0),
+              ),
             ],
           );
         } else if (snapshot.hasError) {
-          log(snapshot.error.toString());
-          return Container();
+          Container();
         } else {
           return CircularProgressIndicator();
         }
       },
+      future: customer,
     );
   }
 }
