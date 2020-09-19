@@ -38,7 +38,7 @@ class BillPaySection extends StatelessWidget {
               horizontal: 80.0,
             ),
             color: Colors.black,
-            onPressed: () {},
+            onPressed: () => {},
             child: Text(
               'Pay Bill'.toUpperCase(),
               style: TextStyle(

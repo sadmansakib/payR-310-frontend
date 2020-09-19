@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import '../models/customer.dart';
 import '../api/apihandler.dart';
@@ -46,7 +44,7 @@ class _ProfileInfoState extends State<ProfileInfo> {
             ],
           );
         } else if (snapshot.hasError) {
-          Container();
+          return Container();
         } else {
           return CircularProgressIndicator();
         }
