@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payR/pages/dashboard/dashboard_pay_bill_sec.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../widgets/custom_appbar.dart';
 import '../../widgets/app_bar_btn.dart';
 import '../../widgets/body_container.dart';
@@ -13,7 +14,9 @@ class DashBoard extends StatelessWidget {
       appBar: CustomAppBar(
         appBarButton: AppBarButton(
           btnText: 'Logout',
-          btnFunction: () {
+          btnFunction: () async {
+            SharedPreferences pref = await SharedPreferences.getInstance();
+            pref.remove('token');
             Navigator.pushNamed(context, '/');
           },
         ),
